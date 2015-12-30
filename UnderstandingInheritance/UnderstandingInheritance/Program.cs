@@ -46,13 +46,11 @@ namespace UnderstandingInheritance
 
         public virtual string FormatMe()
         {
-            return String.Format(
-                "{0} - {1} - {2} - {3}",
+            return String.Format("{0} - {1} - {2} - {3}",
                 this.Make,
                 this.Model,
                 this.Color,
-                this.Year
-                );
+                this.Year);
         }
     }
 
@@ -62,12 +60,10 @@ namespace UnderstandingInheritance
 
         public override string FormatMe()
         {
-            return String.Format(
-                "{0} - {1} - {2} Towing units",
+            return String.Format("{0} - {1} - {2} Towing units",
                 this.Make,
                 this.Model,
-                this.TowingCapacity
-                );
+                this.TowingCapacity);
         }
     }
 }
