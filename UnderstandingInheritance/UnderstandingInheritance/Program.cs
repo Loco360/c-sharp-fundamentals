@@ -16,7 +16,7 @@ namespace UnderstandingInheritance
             myCar.Color = "Black";
             myCar.Year = 2005;
 
-            PrintCarDetails(myCar);
+            PrintVehicleDetails(myCar);
 
             Truck myTruck = new Truck();
 
@@ -26,25 +26,31 @@ namespace UnderstandingInheritance
             myTruck.Color = "Black";
             myTruck.TowingCapacity = 1200;
 
-            PrintCarDetails(myTruck);
+            PrintVehicleDetails(myTruck);
 
             Console.ReadLine();
         }
 
-        private static void PrintCarDetails(Car car)
+        private static void PrintVehicleDetails(Vehicle vehicle)
         {
-            Console.WriteLine("Here are the Car's details: {0}", car.FormatMe());
+            Console.WriteLine("Here are the vehicle's details: {0}",
+                vehicle.FormatMe());
         }
     }
 
-    class Car
+    abstract class Vehicle
     {
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public string Color { get; set; }
 
-        public virtual string FormatMe()
+        public abstract string FormatMe();
+    }
+
+    class Car : Vehicle
+    {
+        public override string FormatMe()
         {
             return String.Format("{0} - {1} - {2} - {3}",
                 this.Make,
@@ -54,7 +60,7 @@ namespace UnderstandingInheritance
         }
     }
 
-    class Truck : Car
+    class Truck : Vehicle
     {
         public int TowingCapacity { get; set; }
 
