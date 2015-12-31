@@ -29,14 +29,28 @@ namespace UnderstandingLINQ
             //foreach (var car in bmws)
             //    Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
 
-            var orderedCars = from car in myCars
-                              orderby car.Year descending 
-                              select car;
+            //var orderedCars = from car in myCars
+            //                  orderby car.Year descending 
+            //                  select car;
 
-            // Use sorted list from LINQ query
-            foreach (var car in orderedCars)
-                Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
+            //// Use sorted list from LINQ query
+            //foreach (var car in orderedCars)
+            //    Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
 
+            //// Passing in a lambda expression into LINQ's chained, method syntax
+            //var _bmws = myCars.Where(p => p.Year == 2010).Where(p => p.Make == "BMW");
+
+            //foreach (var car in _bmws)
+            //    Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
+
+            //var _orderedCars = myCars.OrderByDescending(p => p.Year);
+
+            //foreach (var car in _orderedCars)
+            //    Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
+
+            var sum = myCars.Sum(p => p.StickerPrice);
+
+            Console.WriteLine(sum);
             Console.ReadLine();
         }
     }
