@@ -10,18 +10,18 @@ namespace WorkingWithCollections
     {
         static void Main(string[] args)
         {
-            Car car1 = new Car();
-            car1.Make = "Oldsmobile";
-            car1.Model = "Custlass Supreme";
+            //Car car1 = new Car();
+            //car1.Make = "Oldsmobile";
+            //car1.Model = "Custlass Supreme";
 
-            Car car2 = new Car();
-            car2.Make = "Geo";
-            car2.Model = "Prism";
+            //Car car2 = new Car();
+            //car2.Make = "Geo";
+            //car2.Model = "Prism";
 
-            Book b1 = new Book();
-            b1.Author = "Robert Tabor";
-            b1.Author = "Microsoft .NET XML Web Services";
-            b1.ISBN = "0-000-00000-0";
+            //Book b1 = new Book();
+            //b1.Author = "Robert Tabor";
+            //b1.Author = "Microsoft .NET XML Web Services";
+            //b1.ISBN = "0-000-00000-0";
 
             // throw-away code (this is the OLD way of doing collections):
             
@@ -71,11 +71,26 @@ namespace WorkingWithCollections
             //    Console.WriteLine(car.Model);
             //}
 
-            Dictionary<string, Car> myDictionary = new Dictionary<string, Car>();
-            myDictionary.Add(car1.Make, car1);
-            myDictionary.Add(car2.Make, car2);
+            //Dictionary<string, Car> myDictionary = new Dictionary<string, Car>();
+            //myDictionary.Add(car1.Make, car1);
+            //myDictionary.Add(car2.Make, car2);
 
-            Console.WriteLine(myDictionary["Geo"].Model);
+            //Console.WriteLine(myDictionary["Geo"].Model);
+
+            //string[] names = { "Bob", "Steve", "Brian", "Chuck" };
+
+            Car car1 = new Car() { Make = "Oldsmobile", Model = "Cutlass Supreme"};
+            Car car2 = new Car() { Make = "Geo", Model = "Prism" };
+            Car car3 = new Car() { Make = "Nissan", Model = "Altima" };
+
+            List<Car> myList = new List<Car>()
+            {
+                new Car { Make = "Oldsmobile", Model = "Cutlass Supreme" },
+                new Car { Make = "Geo", Model = "Prism" },
+                new Car { Make = "Nissan", Model = "Altima" }
+            };
+
+
 
             Console.ReadLine();
         }
