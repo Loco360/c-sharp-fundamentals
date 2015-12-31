@@ -10,6 +10,10 @@ namespace UnderstandingEnumerations
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+
+            Console.WriteLine("Hello world!");
+            Console.ReadLine();
         }
     }
 }
