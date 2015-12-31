@@ -23,6 +23,22 @@ namespace WorkingWithCollections
             b1.Author = "Microsoft .NET XML Web Services";
             b1.ISBN = "0-000-00000-0";
 
+            // throw-away code (this is the OLD way of doing collections):
+            
+            // ArrayLists are dynamically sized, and support other
+            // cool features like sorting, removing items, etc.
+            System.Collections.ArrayList myArrayList = new System.Collections.ArrayList();
+            myArrayList.Add(car1);
+            myArrayList.Add(car2);
+            myArrayList.Add(b1);
+            //myArrayList.Remove(b1);
+
+            foreach (object o in myArrayList)
+            {
+                Console.WriteLine(((Car)o).Make);
+            }
+            // end throw-away code
+
             Console.ReadLine();
         }
     }
