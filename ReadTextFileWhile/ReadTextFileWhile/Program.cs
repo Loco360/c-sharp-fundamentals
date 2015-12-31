@@ -26,9 +26,22 @@ namespace ReadTextFileWhile
 
                 myReader.Close();
             }
+            catch (DirectoryNotFoundException e)
+            {
+                Console.WriteLine("Couldn't find the file. Are you sure the DIRECTORY exists?");
+            }
+            catch (FileNotFoundException e)
+            {
+                Console.WriteLine("Couldn't find the file. Are you sure you're looking for the correct file?");
+            }
             catch (Exception e)
             {
                 Console.WriteLine("Something didn't quite work correctly: {0}", e.Message);
+            }
+            finally
+            {
+                // Perform any cleanup to roll back the data or close connections
+                // to files, database, network, etc.
             }
 
             Console.ReadLine();
