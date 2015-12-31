@@ -59,17 +59,23 @@ namespace WorkingWithCollections
 
             // end throw-away code
 
-            List<Car> myList = new List<Car>();
+            //List<Car> myList = new List<Car>();
 
-            myList.Add(car1);
-            myList.Add(car2);
-            //myList.Add(b1); // Cannot do this, as the type is a mismatch
+            //myList.Add(car1);
+            //myList.Add(car2);
+            ////myList.Add(b1); // Cannot do this, as the type is a mismatch
 
-            foreach (Car car in myList)
-            {
-                // No casting!
-                Console.WriteLine(car.Model);
-            }
+            //foreach (Car car in myList)
+            //{
+            //    // No casting!
+            //    Console.WriteLine(car.Model);
+            //}
+
+            Dictionary<string, Car> myDictionary = new Dictionary<string, Car>();
+            myDictionary.Add(car1.Make, car1);
+            myDictionary.Add(car2.Make, car2);
+
+            Console.WriteLine(myDictionary["Geo"].Model);
 
             Console.ReadLine();
         }
