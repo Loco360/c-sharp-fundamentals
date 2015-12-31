@@ -26,9 +26,9 @@ namespace ReadTextFileWhile
 
                 myReader.Close();
             }
-            catch
+            catch (Exception e)
             {
-                Console.WriteLine("Something didn't quite work correctly.");
+                Console.WriteLine("Something didn't quite work correctly: {0}", e.Message);
             }
 
             Console.ReadLine();
