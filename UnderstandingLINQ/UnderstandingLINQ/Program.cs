@@ -20,13 +20,21 @@ namespace UnderstandingLINQ
             };
 
             // LINQ query (Language Integrated Query)
-            var bmws = from car in myCars
-                where car.Make == "BMW"
-                && car.Year == 2010
-                select new { car.Make, car.Model, car.Year };
+            //var bmws = from car in myCars
+            //    where car.Make == "BMW"
+            //    && car.Year == 2010
+            //    select new { car.Make, car.Model, car.Year };
 
             // Use filtered list from LINQ query
-            foreach (var car in bmws)
+            //foreach (var car in bmws)
+            //    Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
+
+            var orderedCars = from car in myCars
+                              orderby car.Year descending 
+                              select car;
+
+            // Use sorted list from LINQ query
+            foreach (var car in orderedCars)
                 Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
 
             Console.ReadLine();
