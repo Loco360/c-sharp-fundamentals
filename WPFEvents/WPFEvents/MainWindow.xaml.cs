@@ -23,6 +23,21 @@ namespace WPFEvents
         public MainWindow()
         {
             InitializeComponent();
+
+            MyButton.Click += MyButton_Click;
+            MyButton.Click += MyButton_IClickedThis;
+        }
+
+        void MyButton_Click(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            MyLabel.Content = "Hello World!";
+        }
+
+        void MyButton_IClickedThis(object sender, RoutedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            MyLabel.Content = "Hello World again!";
         }
     }
 }
