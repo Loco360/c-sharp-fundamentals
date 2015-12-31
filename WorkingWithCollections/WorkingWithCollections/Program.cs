@@ -27,16 +27,36 @@ namespace WorkingWithCollections
             
             // ArrayLists are dynamically sized, and support other
             // cool features like sorting, removing items, etc.
-            System.Collections.ArrayList myArrayList = new System.Collections.ArrayList();
-            myArrayList.Add(car1);
-            myArrayList.Add(car2);
-            myArrayList.Add(b1);
-            //myArrayList.Remove(b1);
+            //System.Collections.ArrayList myArrayList = new System.Collections.ArrayList();
+            //myArrayList.Add(car1);
+            //myArrayList.Add(car2);
+            //myArrayList.Add(b1);
+            ////myArrayList.Remove(b1);
 
-            foreach (object o in myArrayList)
-            {
-                Console.WriteLine(((Car)o).Make);
-            }
+            //foreach (object o in myArrayList)
+            //{
+            //    Console.WriteLine(((Car)o).Make);
+            //}
+
+            // Dictionaries allow you to save a key along with
+            // the value, and also support cool features.
+            // There are different dictionaries to choose from ...
+            System.Collections.Specialized.ListDictionary myDictionary
+                = new System.Collections.Specialized.ListDictionary();
+
+            myDictionary.Add(car1.Make, car1);
+            myDictionary.Add(car2.Make, car2);
+            myDictionary.Add(b1.Author, b1);
+
+
+            // Easy access to an element using its key
+            Console.WriteLine(((Car)myDictionary["Geo"]).Model);
+
+            // But since its not strongly typed, we can easily break it
+            // by adding a different type to the dictionary ...
+            // Obviously, I'm trying to retrieve a book here, and then get its ... model?
+            Console.WriteLine(((Car)myDictionary["Robert Tabor"]).Model);
+
             // end throw-away code
 
             Console.ReadLine();
