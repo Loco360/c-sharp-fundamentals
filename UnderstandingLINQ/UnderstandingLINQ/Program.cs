@@ -19,7 +19,13 @@ namespace UnderstandingLINQ
                 new Car() { Make = "BMW", Model = "55i", Color = CarColor.Black, StickerPrice = 57000, Year = 2010 }
             };
 
-            foreach (var car in myCars)
+            // LINQ query (Language Integrated Query)
+            var bmws = from car in myCars
+                where car.Make == "BMW"
+                select car;
+
+            // Use filtered list from LINQ query
+            foreach (var car in bmws)
                 Console.WriteLine("{0} - {1} - {2}", car.Make, car.Model, car.Year);
 
             Console.ReadLine();
