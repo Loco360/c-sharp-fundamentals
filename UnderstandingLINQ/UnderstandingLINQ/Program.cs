@@ -22,7 +22,8 @@ namespace UnderstandingLINQ
             // LINQ query (Language Integrated Query)
             var bmws = from car in myCars
                 where car.Make == "BMW"
-                select car;
+                && car.Year == 2010
+                select new { car.Make, car.Model, car.Year };
 
             // Use filtered list from LINQ query
             foreach (var car in bmws)
