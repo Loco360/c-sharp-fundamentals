@@ -41,23 +41,35 @@ namespace WorkingWithCollections
             // Dictionaries allow you to save a key along with
             // the value, and also support cool features.
             // There are different dictionaries to choose from ...
-            System.Collections.Specialized.ListDictionary myDictionary
-                = new System.Collections.Specialized.ListDictionary();
+            //System.Collections.Specialized.ListDictionary myDictionary
+            //    = new System.Collections.Specialized.ListDictionary();
 
-            myDictionary.Add(car1.Make, car1);
-            myDictionary.Add(car2.Make, car2);
-            myDictionary.Add(b1.Author, b1);
+            //myDictionary.Add(car1.Make, car1);
+            //myDictionary.Add(car2.Make, car2);
+            //myDictionary.Add(b1.Author, b1);
 
 
-            // Easy access to an element using its key
-            Console.WriteLine(((Car)myDictionary["Geo"]).Model);
+            //// Easy access to an element using its key
+            //Console.WriteLine(((Car)myDictionary["Geo"]).Model);
 
-            // But since its not strongly typed, we can easily break it
-            // by adding a different type to the dictionary ...
-            // Obviously, I'm trying to retrieve a book here, and then get its ... model?
-            Console.WriteLine(((Car)myDictionary["Robert Tabor"]).Model);
+            //// But since its not strongly typed, we can easily break it
+            //// by adding a different type to the dictionary ...
+            //// Obviously, I'm trying to retrieve a book here, and then get its ... model?
+            //Console.WriteLine(((Car)myDictionary["Robert Tabor"]).Model);
 
             // end throw-away code
+
+            List<Car> myList = new List<Car>();
+
+            myList.Add(car1);
+            myList.Add(car2);
+            //myList.Add(b1); // Cannot do this, as the type is a mismatch
+
+            foreach (Car car in myList)
+            {
+                // No casting!
+                Console.WriteLine(car.Model);
+            }
 
             Console.ReadLine();
         }
